@@ -36,6 +36,5 @@ jobs:
       shell: bash
       run: |
         cd Source_Code/DVRF_v03_source/
-        sed -i -e 's|/bin/sh|/bin/bash|g' make.sh
         sed -i -e 's|if test ! -f .select && test -f cy_configure; then|if test ! -f .select && -f select.sh && test -f cy_configure; then|g' release/src/Makefile
         ./make.sh
