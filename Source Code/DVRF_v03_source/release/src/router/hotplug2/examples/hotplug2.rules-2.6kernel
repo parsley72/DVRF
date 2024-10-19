@@ -1,0 +1,12 @@
+DEVPATH is set {
+	makedev /dev/%DEVICENAME% 0644
+}
+
+MODALIAS is set {
+	exec /sbin/modprobe -q %MODALIAS% ;
+}
+
+SUBSYSTEM == block, DEVPATH is set, MAJOR is set, MINOR is set {
+	exec /sbin/hotplug_2 block;
+}
+

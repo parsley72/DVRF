@@ -1,0 +1,1 @@
+cmd_drivers/mtd/built-in.o :=  mipsel-uclibc-linux26-ld   -r -o drivers/mtd/built-in.o drivers/mtd/mtdcore.o drivers/mtd/mtdsuper.o drivers/mtd/mtdpart.o drivers/mtd/mtdchar.o drivers/mtd/mtd_blkdevs.o drivers/mtd/mtdblock.o drivers/mtd/chips/built-in.o drivers/mtd/maps/built-in.o drivers/mtd/devices/built-in.o drivers/mtd/nand/built-in.o drivers/mtd/onenand/built-in.o

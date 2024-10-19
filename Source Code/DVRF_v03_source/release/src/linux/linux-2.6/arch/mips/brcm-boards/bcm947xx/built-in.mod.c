@@ -1,0 +1,107 @@
+#include <linux/module.h>
+#include <linux/vermagic.h>
+#include <linux/compiler.h>
+
+MODULE_INFO(vermagic, VERMAGIC_STRING);
+
+struct module __this_module
+__attribute__((section(".gnu.linkonce.this_module"))) = {
+ .name = KBUILD_MODNAME,
+ .arch = MODULE_ARCH_INIT,
+};
+
+static const struct modversion_info ____versions[]
+__attribute_used__
+__attribute__((section("__versions"))) = {
+	{ 0xf531d0bc, "struct_module" },
+	{ 0x3596a849, "pci_scan_bus_parented" },
+	{ 0x57da4815, "pci_bus_read_config_byte" },
+	{ 0x9afe9c91, "__mod_timer" },
+	{ 0x84095e80, "si_coreidx" },
+	{ 0xd1094dea, "si_gpiosetcore" },
+	{ 0x89480c9d, "osl_delay" },
+	{ 0x88635bb7, "register_sysctl_table" },
+	{ 0x65380442, "si_clock" },
+	{ 0x75b38522, "del_timer" },
+	{ 0x1e33e00, "getintvar" },
+	{ 0x44e88813, "bcm_mdelay" },
+	{ 0x1211ac, "class_device_destroy" },
+	{ 0xc12493fa, "class_device_create" },
+	{ 0xb85ff2a8, "osl_mfree" },
+	{ 0x9e911bf1, "proc_dointvec" },
+	{ 0x7ef4e6fa, "si_gpioouten" },
+	{ 0xa3d733c6, "bcm_chipname" },
+	{ 0x88d2c1b7, "mips_machtype" },
+	{ 0x3e2d67d9, "mips_io_port_base" },
+	{ 0x110e2600, "remove_proc_entry" },
+	{ 0x9833b9fa, "bcm_strtoul" },
+	{ 0x2552ffca, "si_core_sflags" },
+	{ 0xe094c362, "mips_machgroup" },
+	{ 0xc32a1e3c, "pci_bus_write_config_word" },
+	{ 0x7d11c268, "jiffies" },
+	{ 0xce4ed7d4, "si_watchdog" },
+	{ 0xc7b7502c, "si_iscoreup" },
+	{ 0x8a2ed932, "pci_set_master" },
+	{ 0xa6e937a1, "pcie_readreg" },
+	{ 0x919b06b7, "si_setint" },
+	{ 0x66f3993b, "si_watchdog_ms" },
+	{ 0x14da268, "si_pmu_mem_clock" },
+	{ 0x9dd9d2a7, "getvar" },
+	{ 0x2bc95bd4, "memset" },
+	{ 0x79870675, "nvram_get" },
+	{ 0x325653e3, "sb_commit" },
+	{ 0xdd132261, "printk" },
+	{ 0x1075bf0, "panic" },
+	{ 0xc777ca5a, "si_setcore" },
+	{ 0x48a270c9, "pci_bus_write_config_dword" },
+	{ 0x5e692fc2, "pci_bus_add_devices" },
+	{ 0xca549ed, "class_create" },
+	{ 0x552f6f3c, "pci_find_bus" },
+	{ 0x9c50c9a7, "si_corerev" },
+	{ 0xcd360d1a, "cpu_data" },
+	{ 0xacf2df89, "__ioremap" },
+	{ 0x39ca1964, "irq_stat" },
+	{ 0x1e004dc8, "si_gpiocontrol" },
+	{ 0xddc5f7d3, "si_coreid" },
+	{ 0x5968cdf3, "si_gpioin" },
+	{ 0x568dbf7b, "si_pmu_cpu_clock" },
+	{ 0x22451d08, "si_core_reset" },
+	{ 0xc0ab0b38, "si_flag" },
+	{ 0xa70635f6, "pci_bus_read_config_word" },
+	{ 0x8c3e099a, "pci_bus_read_config_dword" },
+	{ 0xce1d58c, "hndcrc8" },
+	{ 0x22562832, "unregister_sysctl_table" },
+	{ 0x2380225b, "si_addrspace" },
+	{ 0x30c3ef47, "set_irq_chip" },
+	{ 0xa07c061d, "register_chrdev" },
+	{ 0x7d49052b, "create_proc_entry" },
+	{ 0x14540e95, "si_setcoreidx" },
+	{ 0xc512e51a, "si_numaddrspaces" },
+	{ 0xe5729660, "proc_root" },
+	{ 0xdc7a7336, "si_addrspacesize" },
+	{ 0x35fe47a1, "init_timer" },
+	{ 0x1a98fa32, "pci_bus_write_config_byte" },
+	{ 0x4de4e1be, "si_core_disable" },
+	{ 0x11f7ce5e, "memcpy" },
+	{ 0xd361a3d2, "si_clock_rate" },
+	{ 0x60a32ea9, "pm_power_off" },
+	{ 0x6334f7c, "si_kattach" },
+	{ 0xc192d491, "unregister_chrdev" },
+	{ 0x9e73e812, "class_destroy" },
+	{ 0x60247532, "__iounmap" },
+	{ 0x58c774ac, "osl_malloc" },
+	{ 0x1659c56b, "si_alp_clock" },
+	{ 0x18f94216, "si_detach" },
+	{ 0x8f92238c, "getgpiopin" },
+	{ 0xcd61f5d3, "si_corepciid" },
+	{ 0x4d0521c4, "si_osh" },
+	{ 0x264e8f33, "si_gpioout" },
+	{ 0xe779ad95, "pcie_writereg" },
+	{ 0x428c6304, "si_core_cflags" },
+};
+
+static const char __module_depends[]
+__attribute_used__
+__attribute__((section(".modinfo"))) =
+"depends=built-in,built-in,built-in,built-in,built-in";
+

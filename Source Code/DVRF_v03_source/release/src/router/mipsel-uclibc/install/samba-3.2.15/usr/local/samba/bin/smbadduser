@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# script file to add user for samba
+#
+
+
+if [ $# -lt 2 ]; then echo "Usage:$0 user passwd"; exit 1 ; fi
+(sleep 1; echo "$2";sleep 1; echo "$2") | /usr/local/samba/bin/smbpasswd -a $1 -s
+exit 0

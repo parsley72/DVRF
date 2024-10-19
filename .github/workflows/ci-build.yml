@@ -23,13 +23,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Extract source code
-      shell: bash
-      run: |
-        cd "Source Code"
-        ./merge_and_extract.sh
-        ./clean.sh
-
     - name: Install compiler
       shell: bash
       run: |

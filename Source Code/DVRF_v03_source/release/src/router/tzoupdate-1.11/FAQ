@@ -1,0 +1,67 @@
+TZO 'tzoupdate' Frequently Asked Questions
+
+RUNTIME ISSUES
+
+Q: When I run tzoupdate, I get a segfault or floating point error. Now what?
+A: You probably downloaded a pre-compiled tzoupdate release, and it is linked
+to different libraries (or versions) than found on your system. Download
+the -src release and recompile.
+
+Q: Is this client for end users on Linux, or embedded-systems developers?
+A: Both actually. We are creating 'package' (rpm) installers for Linux
+distributions. The sourcecode is provided to assist developers.
+
+COMPILE ISSUES
+Q: Can I make and install tzoupdate on any version of Linux or UNIX?
+A: Most likely. The C portion is reasonably portable and minimalist.
+
+Q: I need help compiling tzoupdate for my OS.
+A: Compilation help for a TZO client is outside the scope of support for 
+the TZO service. Please use a pre-built client on the TZO download page,
+and for an OS that has official TZO support. (While the source code
+for tzoupdate is very portable, we just can't provide walk-through
+support for installing and using developer toolchains. )
+
+Q: tzoupdate will not compile under Sun Solaris.
+A: Known issue. The default Solaris toolchain is not GNU-based.
+Installing the GNU development tools on Solaris may help, but before contacting
+TZO Support please verify the  GNU toolchain is configured and working
+(i.e., that you can build 'helloworld.c' from someplace).
+
+
+DEVELOPMENT ISSUES
+Q: Where can I get more information on TZO development?
+A: Please see specifications at http://www.tzo.com/developer/ and
+also contact devsupport@tzo.com. 
+
+Q: Can I compile tzoupdate for a router firmware such as OpenWRT?
+A: Not as-is. For anyone unfamiliar with the build and install processes for
+embedded devices, we would not advise the attempt. If you know your way around
+these systems and can resolve basic issues yourself, we might be able to help.
+
+Q: Can I install this client on a bootable CD Linux such as Knoppix?
+A: This is an interesting idea that has been asked about before, but requires
+careful testing in order to prevent 'client abuse' against the server.
+Talk to TZO Developer Support (devsupport@tzo.com) so we can review test plans.
+Te main concern is that tzoupdate REQUIRES a writable filesystem to record a cache file
+each time the client does an IP address update to TZO. The cache serves to test 
+compare with a live Internet IP check, and if the IPs match then TZO has already
+been updated (and there is no point in updating to the same IP twice).
+
+Q: Does this compile for Windows? Cygwin?
+A: Yes, but as a Cygwin-dependent binary (requires cygwin1.dll).
+
+Q: Does tzoupdate compile as a native Widnows executable?
+A: Not currently. The porting task would be trivial, but not high priority.
+
+Q: I would like to package your TZO client for my favorite Linux|UNIX|BSD
+platform? Can I repackage this and what is the process?
+A: That's great! You can use the current tzoupdate.spec file as a template for what is
+installed, and where it goes. 
+
+If your package is accepted by the OS distributer, send an 
+emailto devsupport@tzo.com. We'll keep you informed of any changes to the 
+TZO specifications, or the tzoupdate codebase.
+
+
+

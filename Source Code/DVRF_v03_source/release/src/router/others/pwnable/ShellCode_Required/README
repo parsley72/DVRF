@@ -1,0 +1,35 @@
+                                               
+                                               
+    ,---,                ,-.----.       ,---,. 
+  .'  .' `\         ,---.\    /  \    ,'  .' | 
+,---.'     \       /__./|;   :    \ ,---.'   | 
+|   |  .`\  | ,---.;  ; ||   | .\ : |   |   .' 
+:   : |  '  |/___/ \  | |.   : |: | :   :  :   
+|   ' '  ;  :\   ;  \ ' ||   |  \ : :   |  |-, 
+'   | ;  .  | \   \  \: ||   : .  / |   :  ;/| 
+|   | :  |  '  ;   \  ' .;   | |  \ |   |   .' 
+'   : | /  ;    \   \   '|   | ;\  \'   :  '   
+|   | '` ,/      \   `  ;:   ' | \.'|   |  |   
+;   :  .'         :   \ |:   : :-'  |   :  \   
+|   ,.'            '---" |   |.'    |   | ,'   
+'---'                    `---'      `----'    
+#############################################
+
+Congrats! If you're reading this then you either connected to the E1550's UART or you extracted the binary with binwalk. Anyways, these pwnables are for teaching you how to exploit other CPU architectures and in this case it's MIPS32 (Little Endian). The following files are on here:
+
+!! All Pwnables in this directory require shellcode !!
+
+- socket_bof - Yet another Stack Buffer Overflow. This will bind to port 1337. It's up to you to exploit this.
+
+- socket_cmd - Socket program that isn't memory corruption related. This passes user sent data over to "System()". Hint: wget is on the device ;)
+
+- stack_bof_02 - Same as stack_bof_01 but this time without a built in /bin/sh function. The only function in here that you can jump to will execute sleep(1) and will return 0x41. Research as to why sleep(1) is useful in exploiting MIPS.
+
+Hint: Check out the memory maps for a process. 
+
+Example 
+#./socket_bof 1337 &
+22358
+# Binding to port 1337
+cat /proc/22358/maps
+[ Base Address - End Address - Properties  ]

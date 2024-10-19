@@ -1,0 +1,26 @@
+                                               
+                                               
+    ,---,                ,-.----.       ,---,. 
+  .'  .' `\         ,---.\    /  \    ,'  .' | 
+,---.'     \       /__./|;   :    \ ,---.'   | 
+|   |  .`\  | ,---.;  ; ||   | .\ : |   |   .' 
+:   : |  '  |/___/ \  | |.   : |: | :   :  :   
+|   ' '  ;  :\   ;  \ ' ||   |  \ : :   |  |-, 
+'   | ;  .  | \   \  \: ||   : .  / |   :  ;/| 
+|   | :  |  '  ;   \  ' .;   | |  \ |   |   .' 
+'   : | /  ;    \   \   '|   | ;\  \'   :  '   
+|   | '` ,/      \   `  ;:   ' | \.'|   |  |   
+;   :  .'         :   \ |:   : :-'  |   :  \   
+|   ,.'            '---" |   |.'    |   | ,'   
+'---'                    `---'      `----'    
+#############################################
+
+Congrats! If you're reading this then you either connected to the E1550's UART or you extracted the binary with binwalk. Anyways, these pwnables are for teaching you how to exploit other CPU architectures and in this case it's MIPS32 (Little Endian). The following files are on here:
+
+- stack_bof_01 - This is your run of the mill Buffer Overflow. This DOES NOT require shellcode to win, there is a function compiled into the binary that is impossible to reach to normally. Your goal is to reach that function which will display a congrats message and execute /bin/sh.
+
+- heap_overflow_01 - This is just a basic heap overflow exercise. Just like the buffer overflow exercise there is a function that cannot be reached normally and will require memory corruption in order to reach the function which will display a congrats message and execute /bin/sh.
+
+- uaf_01 - There is nothing special with this. This is to have the end user learn more about heap allocations and what happens when you allocate the same space once a heap allocation has been freed. I hope this exercise shows the end user how use-after-free vulnerabilities work. All that's needed is to allocate the same space that was allocated for the first heap allocation.
+
+
