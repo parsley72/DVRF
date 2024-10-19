@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # To prevent changes from not being copied over to the binary
 if [ -d ./release/src/router/mipsel-uclibc/ ]; 
 then
