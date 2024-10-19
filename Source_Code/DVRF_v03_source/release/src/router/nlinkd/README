@@ -1,0 +1,11 @@
+This package "nlinkd" is used to listen messages from kernel with netlink socket.
+
+It just response 2 kind of message:  
+- Wireless warning page URL request.
+- Parentral control for non-HTTP traffic URL request.
+
+then, it will return "PASS"-or-"BLOCK" result to the kernel, which filter the traffics accordingly. 
+
+
+
+															--- Tony

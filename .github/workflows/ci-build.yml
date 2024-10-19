@@ -1,0 +1,61 @@
+name: CI build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "*" ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUILD_DIR: Source_Code/DVRF_v03_source/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: install
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get --assume-yes install flex bison gperf
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install compiler
+      shell: bash
+      run: |
+        curl -LO https://github.com/mzpqnxow/hndtools-toolchains/raw/refs/heads/master/hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        tar -xvjf hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        rm hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+
+    - name: Build
+      shell: bash
+      run: |
+        cd $BUILD_DIR
+
+        # From make.sh
+        rm -rf Result
+        # From toolchain.sh
+        export PATH=$GITHUB_WORKSPACE/hndtools-mipsel-linux-uclibc-4.2.3/bin:$PATH
+        mkdir Result  
+
+        # From compile.sh
+        cd release/src
+        make
+
+        cd ..
+        cd ..
+
+        cp -rf release/image/code.bin Result
+        tee Result/DVRF_makefile_output.txt
