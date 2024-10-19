@@ -21,6 +21,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: install
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get --assume-yes install flex bison gperf
+
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
