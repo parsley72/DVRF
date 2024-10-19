@@ -56,7 +56,7 @@ clean:
 	rm -rf $(SRCBASE)/.select $(SRCBASE)/.model $(SRCBASE)/.kernel
 
 all:
-	if test ! -f .select && test -f cy_configure; then \
+	if test ! -f .select && -f select.sh && test -f cy_configure; then \
 		./select.sh; \
 		echo "Press any key to continue:" ; read; \
 		$(MAKE) cytools; \
