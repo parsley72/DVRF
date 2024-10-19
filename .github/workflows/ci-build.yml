@@ -30,8 +30,20 @@ jobs:
         ./merge_and_extract.sh
         ./clean.sh
 
+    - name: Install compiler
+      shell: bash
+      run: |
+        curl -LO https://github.com/mzpqnxow/hndtools-toolchains/raw/refs/heads/master/hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        tar -xvjf hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        rm hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        rm "Source Code"/DVRF_v03_source/toolchain.sh
+        cp "Source Code"/toolchain.sh "Source Code"/DVRF_v03_source/
+
     - name: Build
       shell: bash
       run: |
         cd "Source Code"/DVRF_v03_source/
+        sed -i -e 's|/bin/sh|/bin/bash|g' make.sh
+        sed -i -e 's|$(SRCBASE)|"$(SRCBASE)"|g' release/src/Makefile
+        sed -i -e 's|if test ! -f .select && test -f cy_configure; then|if test ! -f .select && -f select.sh && test -f cy_configure; then|g' release/src/Makefile
         ./make.sh
