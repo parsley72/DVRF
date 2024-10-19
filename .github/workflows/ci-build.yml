@@ -38,3 +38,13 @@ jobs:
       run: |
         cd $BUILD_DIR
         ./make.sh
+
+        # From compile.sh
+        cd release/src
+        make
+
+        cd ..
+        cd ..
+
+        cp -rf release/image/code.bin Result
+        tee Result/DVRF_makefile_output.txt

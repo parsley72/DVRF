@@ -32,4 +32,4 @@ fi
 rm -rf Result
 source ./toolchain.sh
 mkdir Result  
-./compile.sh | tee Result/DVRF_makefile_output.txt
+# ./compile.sh | tee Result/DVRF_makefile_output.txt
