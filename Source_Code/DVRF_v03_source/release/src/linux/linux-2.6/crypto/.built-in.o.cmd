@@ -1,1 +1,0 @@
-cmd_crypto/built-in.o :=  mipsel-uclibc-linux26-ld   -r -o crypto/built-in.o crypto/api.o crypto/scatterwalk.o crypto/cipher.o crypto/digest.o crypto/compress.o crypto/crypto_algapi.o crypto/crypto_hash.o crypto/cryptomgr.o crypto/hmac.o crypto/md5.o

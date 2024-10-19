@@ -1,1 +1,0 @@
-cmd_net/ipv4/netfilter/iptable_nat.o := mipsel-uclibc-linux26-ld   -r -o net/ipv4/netfilter/iptable_nat.o net/ipv4/netfilter/nf_nat_rule.o net/ipv4/netfilter/nf_nat_standalone.o net/ipv4/netfilter/ipt_cone.o
