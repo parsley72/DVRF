@@ -1,1 +1,0 @@
-cmd_kernel/irq/built-in.o :=  mipsel-uclibc-linux26-ld   -r -o kernel/irq/built-in.o kernel/irq/handle.o kernel/irq/manage.o kernel/irq/spurious.o kernel/irq/resend.o kernel/irq/chip.o kernel/irq/devres.o kernel/irq/autoprobe.o kernel/irq/proc.o

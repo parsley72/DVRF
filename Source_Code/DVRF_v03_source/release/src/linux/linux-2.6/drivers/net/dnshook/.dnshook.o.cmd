@@ -1,1 +1,0 @@
-cmd_drivers/net/dnshook/dnshook.o := mipsel-uclibc-linux26-ld   -r -o drivers/net/dnshook/dnshook.o drivers/net/dnshook/../../../../..//dnshook/sys/skb.o drivers/net/dnshook/../../../../..//dnshook/sys/decode.o drivers/net/dnshook/../../../../..//dnshook/sys/tcp_table.o drivers/net/dnshook/../../../../..//dnshook/sys/pct_table.o

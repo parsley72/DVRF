@@ -1,1 +1,0 @@
-cmd_arch/mips/lib/built-in.o :=  mipsel-uclibc-linux26-ld   -r -o arch/mips/lib/built-in.o arch/mips/lib/iomap.o arch/mips/lib/iomap-pci.o arch/mips/lib/ashldi3.o arch/mips/lib/ashrdi3.o arch/mips/lib/lshrdi3.o arch/mips/lib/ucmpdi2.o
