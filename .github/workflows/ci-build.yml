@@ -29,3 +29,9 @@ jobs:
         cd "Source Code"
         ./merge_and_extract.sh
         ./clean.sh
+
+    - name: Build
+      shell: bash
+      run: |
+        cd "Source Code"/DVRF_v03_source/
+        ./make.sh
