@@ -1,0 +1,237 @@
+fsutil, ufsd.o, ufsd_cbtn.o and ufsd.ko are under Paragon License
+other files are under CyberTAN License
+
+/*
+ * Copyright (C) 2009, CyberTAN Corporation
+ * All Rights Reserved.
+ * 
+ * THIS SOFTWARE IS OFFERED "AS IS", AND CYBERTAN GRANTS NO WARRANTIES OF ANY
+ * KIND, EXPRESS OR IMPLIED, BY STATUTE, COMMUNICATION OR OTHERWISE. CYBERTAN
+ * SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS
+ * FOR A SPECIFIC PURPOSE OR NONINFRINGEMENT CONCERNING THIS SOFTWARE.
+ */
+
+
+/**Paragon License**/
+
+End User License Agreement
+between
+PARAGON Technologie GmbH,
+Systemprogrammierung
+Heinrich-von-Stephan-Str. 5 c, 79100 Freiburg, Germany,
+
+and
+You, as end user
+______________________
+
+covered by a separate license offered or granted by a person other than Paragon.
+
+
+
+
+
+§ 1 Scope of this Agreement
+	The software product accompanying this End User License Agreement ('Software')
+	and all affiliated materials, including program descriptions and instruction
+	manuals ('Documentation'), are copyrighted. Scope of this agreement is the
+	licensing of the Software and Documentation to You, as the 'user'. 
+	PARAGON reserves all rights not expressly granted. 
+
+
+
+
+
+§ 2 Extent of Use / User Duties
+	1. PARAGON grants the User a simple, non-exclusive and temporally unrestricted
+	right to use the Software and the Documentation. Your rights in the Software and
+	the Documentation are limited to those expressly granted in this agreement.
+	In particular, PARAGON reserves all rights of reproduction, distribution and
+	publication. 
+
+	2. The license is restricted to the respective version acquired, i.e. new versions
+	must be re-licensed; patches are considered part of the originally acquired version.
+
+	3. The license is restricted to the object code of the Software. PARAGON is not
+	obliged to provide the user with the source code. The user may not reverse
+	engineer, decompile, dis- and/or reassemble, or change, alter, modify the Software;
+	or create derivative works, enhancements, extensions or add-ons to/of any part
+	of the Software. 
+
+	4. This license entitles the user to install and use the Software on only one
+	computer at a single location. If this computer is part of a multi-user-system,
+	the license is valid for all authorized users of this system. 
+
+	5. The Software may not be used per remote data transmission. The transfer in
+	physical form (i.e. stored on portable or other physical media) from one computer
+	to another is only permitted if the Software is not used on more than one computer
+	at the same time.
+
+	6. A transfer of the Software to third parties under retention of any usage
+	possibilities is excluded, unless PARAGON permits such a transfer in a written
+	agreement with the user. The user is obliged to prevent unauthorized access to
+	Software and Documentation by third parties through the implementation of
+	appropriate precautionary measures. The original storage media delivered and
+	any backups are to be stored in a location protected against unauthorized
+	access by a third party. The User is to strongly advise potential employees
+	to respect copyright and the terms of this agreement.
+
+ 
+	7. The User is allowed to sell the Software and Documentation to third parties
+	or to give them away permanently, provided that the acquiring third party
+	agrees with these terms and conditions, and that the User retains no usage
+	rights or possibilities associated with the Software and Documentation.
+
+	8. Duplication of the Software is prohibited, provided that the duplication is not
+	necessary for the normal operation of the Software. Duplication is considered
+	necessary when it occurs during the installation of the software to a hard disk
+	from the accompanying media and when downloading or printing-out data from the
+	running application for exclusively personal use. In addition, the User may create
+	a backup copy when such action is necessary to ensure future use of the software
+	in the contractually implied, exclusively personal manner. 
+
+	9. Translation of the software is prohibited.
+ 
+	10. Any copy protection system, copyright-notice, or registration-number built
+	into the Software, or any other characteristics that serve to identify the program,
+	are not to be removed by the User.
+
+
+
+
+
+
+§ 3 Warranty / Claims for Damages
+	1. The User is aware of the fact that software can generally not be produced
+	completely devoid of faults. PARAGON is only liable for defects in the Software
+	that decrease significantly its value or suitability for the contractually
+	intended use. The warranty refers only to material defects of contractual
+	products delivered by PARAGON. PARAGON is liable without limitation for
+	defects in title. 
+
+	2. The statutory limitation period for claims of faultiness amounts to 2 years
+	and begins with the hand over of the Software to the User. Within this period,
+	all faults that incur a legal warranty obligation will be repaired free of charge.
+	Provided that the customer is not a consumer, claims of faultiness can only be
+	met by subsequent fulfilment, delivery or improvement. Should these remedies fail,
+	the user has the right to either withdraw from the contract or to reduce the
+	purchasing price accordingly. In cases where an explicit guarantee is provided
+	by the manufacturer, the details are to be taken from the current
+	guarantee-conditions that are enclosed with the delivered article.
+	Oral or written statements concerning suitability and use of our products are
+	not to be regarded as assurances of certain qualities, but merely as
+	non-binding purchasing advice. 
+
+	3. PARAGON is liable for damages arising from the injury of life, body or
+	health that are based on a negligent breach of duty on the part of PARAGON
+	or an intentional or negligent breach of duty by a legal representative or
+	a vicarious agent of PARAGON; as well as for other damages that are based
+	on an intentional or grossly negligent breach of duty on the part of PARAGON
+	or on an intentional or grossly negligent breach of duty by a legal
+	representative or a vicarious agent of PARAGON; yet, PARAGON is fully liable
+	for damages arising from a breach of essential contractual obligations.
+	Further liability for damages is excluded, no matter on which legal grounds
+	claims are based. Liability for damages resulting from a failure to meet
+	explicitly granted quality guarantees or such liability based on the
+	German product liability act remains unaffected. 
+	4. Liability for damages that do not involve the injury of life, body or health
+	is restricted to those cases where the genesis of the damages can be typically
+	expected. This limitation of liability is also valid if PARAGON injures an
+	essential contractual duty negligently.
+
+	5. It is up to the user to choose an appropriate usage location for the Software
+	and to determine the type of hardware / computer system to be used.
+	PARAGON offers no guarantees in this matter.
+
+
+
+
+
+§ 4 Contract Duration 
+	1. The contract runs without temporal limitation. 
+	2. The rights conferred to the user under this agreement terminate without notice
+	from PARAGON if the User fails to comply with any term(s) of this agreement.
+	In this case, the User is obliged to give all media containing Software and
+	Documentation back to PARAGON and to remove the Software and all files built
+	with its help from the hard drive in a way that guarantees non-recoverability
+	and, upon demand by PARAGON, to confirm the complete removal through a declaration
+	in lieu of oath.
+
+	3. Compliant use of the Software and Documentation is a condition for the contractual
+	license. In case of non-compliance, this license expires without the need for an
+	express termination of the contract. 
+
+
+
+
+
+
+§ 5 Additional Terms Concerning Windows® PE
+	If the Software licensed herein includes Windows PE, the terms and conditions of
+	this section also apply:
+
+	1. “Windows PE” is Windows software licensed from Microsoft Corporation and/or
+	Microsoft Affiliate(s) and is provided “as is”.
+
+	2. “Windows PE” contains a security feature that will cause the computer system to
+	reboot after 72 hours of continuous use, without prior notification to the User.
+
+	3. Microsoft® or its affiliates are not liable for the licensed Software including
+	“Windows PE”. Any support for the Software will be provided by PARAGON.
+
+	4. To avoid any misunderstandings, the following must be clarified:
+	The license of the Software including “Windows PE” is limited to use as a boot,
+	diagnostic, disaster recovery, setup, restoration, emergency services, installation,
+	test and/ or configuration utilities program, and not for use as a general purpose
+	operating system or as a substitute for a fully functional version of any operating
+	system product.
+
+	5. Windows® is a registered trademark of Microsoft Corporation.
+
+	(6. “Windows PE” is subject to U.S /European Union export jurisdiction.)
+
+
+
+§ 6 Further Terms
+	1. If the user is not a consumer, this agreement may not be modified, varied or altered,
+	unless agreed upon in writing by both contracting parties.
+	2. This agreement is governed by and interpreted in accordance with the laws of Germany. 
+	3. Concerning contracts with merchants, commercial companies, public legal entities and
+	legal separate estates under public law, as well as in those cases where the customer,
+	who is not a consumer, does not have his/its general jurisdiction within Germany,
+	the court located in Freiburg im Breisgau, Germany shall have jurisdiction to hear
+	the disputes arising  under this agreement.
+	4. This agreement, together with the general terms and conditions of PARAGON, comprises
+	the entire agreement between PARAGON and You, as end user.
+	5. If any current or future provision of this agreement is held to be invalid, illegal
+	or unenforceable, the validity, legality and enforceability of the remaining provisions
+	of this agreement will not be affected.
+
+
+Last update: January 2008
+
+Offeror Identification:
+PARAGON Technologie GmbH, Systemprogrammierung
+Represented by executive manager Konstantin Komarov
+Heinrich-von-Stephan-Str. 5 c, 
+79100 Freiburg, Germany;
+Tel:  +49 (0) 761- 59 018 201, 
+Fax: +49 (0) 761- 59 018 130, 
+www.paragon-software.com
+Value added Tax identification number: 
+DE-193384581
+HRB-Nr.: 300575
+Court of registration: Freiburg
+
+
+This is a non-binding translation of the original German EULA. 
+
+In case of uncertainty regarding the permissibility of intended actions,
+please consult the legally binding German version of this EULA.
+
+
+
+Microsoft and Windows are registered trademarks of Microsoft Corporation.
+Other trademarks are trademarks of their respective companies.
+
+
+

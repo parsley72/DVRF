@@ -1,0 +1,14 @@
+# tzoupdate, HISTORY / change log:
+
+
+*    Mon Aug 6 2007
+ * sgp: Depricated tzodetect.sh for lsb_release instead (will use tzodetect.sh if ! LSB OS)
+ * sgp: Added sanity check if /etc/tzoupdate.conf isn't yet configured..
+ * sgp: Code cleanup in tzowrapper.sh
+
+*      Tue Jul 17 2007
+ * sgp: tzoupdate.c now opens conf as RDONLY, look for conf in /etc (sgp)
+
+*      Tue May 29 2007
+ * mdf: tzoupdate.c fix to close of sockets on failure. fix for ipfile.txt truncate
+

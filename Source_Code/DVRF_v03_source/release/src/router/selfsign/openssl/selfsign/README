@@ -1,0 +1,5 @@
+1. Just Add a file to selfsign directory to make a selfsign tool.
+
+2. This is code port from source code selfsign.c located in directory "../demos/" and sign.c  located in directory "../demos/sign". Please refer to these directories for more information.
+
+3 To build a selfsign tool with command "make" and clean the workaround with comand line "make clean"

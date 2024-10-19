@@ -1,0 +1,138 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:588: checking for a BSD compatible install
+configure:641: checking whether build environment is sane
+configure:698: checking whether make sets ${MAKE}
+configure:744: checking for working aclocal
+configure:757: checking for working autoconf
+configure:770: checking for working automake
+configure:783: checking for working autoheader
+configure:796: checking for working makeinfo
+configure:826: checking host system type
+configure:852: checking for gcc
+configure:965: checking whether the C compiler (mipsel-uclibc-linux26-gcc -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__ -L/home/dvrf/Download/DVRF_v03/release/src/router/libbcmcrypto -lbcmcrypto) works
+configure:981: mipsel-uclibc-linux26-gcc -o conftest -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  -L/home/dvrf/Download/DVRF_v03/release/src/router/libbcmcrypto -lbcmcrypto conftest.c  1>&5
+configure:1007: checking whether the C compiler (mipsel-uclibc-linux26-gcc -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__ -L/home/dvrf/Download/DVRF_v03/release/src/router/libbcmcrypto -lbcmcrypto) is a cross-compiler
+configure:1012: checking whether we are using GNU C
+configure:1040: checking whether mipsel-uclibc-linux26-gcc accepts -g
+configure:1078: checking how to run the C preprocessor
+configure:1169: checking for a BSD compatible install
+configure:1222: checking whether make sets ${MAKE}
+configure:1249: checking build system type
+configure:1275: checking for mipsel-linux-ar
+configure:1307: checking for mipsel-linux-ranlib
+configure:1373: checking for AIX
+configure:1540: checking for ANSI C header files
+configure:1647: checking for string.h
+configure:1647: checking for stropts.h
+configure:1647: checking for sys/conf.h
+configure:1647: checking for sys/ksym.h
+configure:1647: checking for sys/time.h
+configure:1647: checking for sys/times.h
+configure:1647: checking for sys/select.h
+configure:1647: checking for sys/sysctl.h
+configure:1647: checking for sys/sockio.h
+configure:1647: checking for sys/types.h
+configure:1647: checking for net/if_dl.h
+configure:1647: checking for net/if_var.h
+configure:1647: checking for linux/version.h
+configure:1647: checking for kvm.h
+configure:1647: checking for netdb.h
+configure:1647: checking for netinet/in.h
+configure:1647: checking for net/netopt.h
+configure:1647: checking for netinet/in_var.h
+configure:1647: checking for netinet/in6_var.h
+configure:1647: checking for netinet/in6.h
+configure:1647: checking for inet/nd.h
+configure:1647: checking for asm/types.h
+configure:1647: checking for linux/rtnetlink.h
+configure:1647: checking for netinet/icmp6.h
+configure:1647: checking for libutil.h
+configure:1685: checking for working const
+configure:1760: checking return type of signal handlers
+configure:2495: checking whether byte ordering is bigendian
+configure:2589: checking for bcopy
+configure:2589: checking for bzero
+configure:2589: checking for strerror
+configure:2589: checking for inet_aton
+configure:2589: checking for daemon
+configure:2589: checking for snprintf
+configure:2589: checking for vsnprintf
+configure:2589: checking for strlcat
+configure:2589: checking for strlcpy
+configure:2589: checking for if_nametoindex
+configure:2589: checking for if_indextoname
+configure:2589: checking for getifaddrs
+configure:2644: checking for setproctitle
+configure:2694: checking for setproctitle in -lutil
+configure:2741: checking zebra between kernel interface method
+configure:2758:28: error: linux/autoconf.h: No such file or directory
+configure:2840: checking route read method check
+configure:2867: checking interface looking up method
+configure:2910: checking ipforward method check
+configure:2939: checking for getaddrinfo
+configure:2994: checking whether does this OS have IPv6 stack
+configure:3086: checking for GNU libc 2.1
+configure:3181: checking for inet_ntop in -lc
+configure:3224: checking for inet_pton in -lc
+configure:3267: checking for crypt in -lcrypt
+configure:3314: checking for res_init in -lresolv
+configure:3361: checking for main in -lm
+configure:3405: checking for __inet_ntop
+configure:3456: checking for __inet_pton
+configure:3507: checking for __inet_aton
+configure:3559: checking for regexec in -lc
+configure:3849: checking whether struct sockaddr has a sa_len field
+configure:3860: mipsel-uclibc-linux26-gcc -c -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  conftest.c 1>&5
+configure: In function 'main':
+configure:3856: error: 'struct sockaddr' has no member named 'sa_len'
+configure: failed program was:
+#line 3851 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/socket.h>
+
+int main() {
+static struct sockaddr ac_i;int ac_j = sizeof (ac_i.sa_len);
+; return 0; }
+configure:3876: checking whether struct sockaddr_in has a sin_len field
+configure:3887: mipsel-uclibc-linux26-gcc -c -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  conftest.c 1>&5
+configure: In function 'main':
+configure:3883: error: 'struct sockaddr_in' has no member named 'sin_len'
+configure: failed program was:
+#line 3878 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <netinet/in.h>
+
+int main() {
+static struct sockaddr_in ac_i;int ac_j = sizeof (ac_i.sin_len);
+; return 0; }
+configure:3903: checking whether struct sockaddr_un has a sun_len field
+configure:3914: mipsel-uclibc-linux26-gcc -c -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  conftest.c 1>&5
+configure: In function 'main':
+configure:3910: error: 'struct sockaddr_un' has no member named 'sun_len'
+configure: failed program was:
+#line 3905 "configure"
+#include "confdefs.h"
+#include <sys/types.h>
+#include <sys/un.h>
+
+int main() {
+static struct sockaddr_un ac_i;int ac_j = sizeof (ac_i.sun_len);
+; return 0; }
+configure:3931: checking whether struct sockaddr_in6 has a sin6_scope_id field
+configure:3942: mipsel-uclibc-linux26-gcc -c -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  conftest.c 1>&5
+configure:3959: checking whther socklen_t is defined
+configure:3971: mipsel-uclibc-linux26-gcc -c -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  conftest.c 1>&5
+configure:3987: checking whether struct sockaddr_dl exist
+configure:3990:23: error: net/if_dl.h: No such file or directory
+configure:4009: checking whether struct ifaliasreq exist
+configure:4031: checking whether struct if6_aliasreq exist
+configure:4034:30: error: netinet6/in6_var.h: No such file or directory
+configure:4053: checking whether struct rt_addrinfo exist
+configure:4075: checking whether struct in_pktinfo exist
+configure:4085: mipsel-uclibc-linux26-gcc -c -DLINUX26 -DBCMVISTAROUTER -DBCMWPA2 -D__CONFIG_EMF__  conftest.c 1>&5
+configure:4105: checking pid file directory
+configure:4147: checking for working htonl

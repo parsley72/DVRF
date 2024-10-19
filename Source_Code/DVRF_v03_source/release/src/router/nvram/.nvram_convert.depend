@@ -1,0 +1,2 @@
+nvram_convert.o: nvram_convert.c nvram_convert.h \
+  /home/dvrf/Download/DVRF_v03/release/src/include/code_pattern.h

@@ -1,0 +1,1 @@
+cmd_kernel/time/built-in.o :=  mipsel-uclibc-linux26-ld   -r -o kernel/time/built-in.o kernel/time/timekeeping.o kernel/time/ntp.o kernel/time/clocksource.o kernel/time/jiffies.o kernel/time/timer_list.o
