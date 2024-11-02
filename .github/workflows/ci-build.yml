@@ -36,7 +36,8 @@ jobs:
       shell: bash
       run: |
         curl -LO https://github.com/mzpqnxow/hndtools-toolchains/raw/refs/heads/master/hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
-        tar -xvjf hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        sudo mkdir -p /projects/hnd/tools/linux/
+        sudo tar -xvjf hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2 -C /projects/hnd/tools/linux/
         rm hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
 
     - name: Build
@@ -47,7 +48,7 @@ jobs:
         # From make.sh
         rm -rf Result
         # From toolchain.sh
-        export PATH=$GITHUB_WORKSPACE/hndtools-mipsel-linux-uclibc-4.2.3/bin:$PATH
+        export PATH=/projects/hnd/tools/linux/hndtools-mipsel-linux-uclibc-4.2.3/bin:$PATH
         mkdir Result  
 
         # From compile.sh
