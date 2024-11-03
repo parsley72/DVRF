@@ -1,0 +1,5 @@
+#!/bin/sh
+
+dd if=/dev/zero of=/dev/ide/host2/bus1/target0/lun0/disc bs=512 count=3
+dd if=/dev/zero of=/dev/ide/host2/bus0/target0/lun0/disc bs=512 count=3
+sync
