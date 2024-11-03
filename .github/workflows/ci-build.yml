@@ -27,12 +27,12 @@ jobs:
         sudo apt-get update
         sudo apt-get --assume-yes install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 perl autoconf libtool
 
-    - name: Install automake-1.9
+    - name: Install automake-1.9.6
       run: |
-        wget https://ftp.gnu.org/gnu/automake/automake-1.9.tar.bz2
-        sudo tar -xvjf automake-1.9.tar.bz2
-        rm automake-1.9.tar.bz2
-        cd automake-1.9
+        wget https://ftp.gnu.org/gnu/automake/automake-1.9.6.tar.bz2
+        sudo tar -xvjf automake-1.9.6.tar.bz2
+        rm automake-1.9.6.tar.bz2
+        cd automake-1.9.6
         sudo ./configure
         sudo make
         sudo make install
