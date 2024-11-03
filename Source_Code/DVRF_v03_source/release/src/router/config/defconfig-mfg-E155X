@@ -1,0 +1,88 @@
+#
+# Automatically generated make config: don't edit
+#
+# CONFIG_NAT is not set
+
+#
+# Base Features
+#
+CONFIG_RC=y
+CONFIG_NVRAM=y
+CONFIG_NVRAM_UTILITY=y
+CONFIG_SHARED=y
+CONFIG_LIBBCM=y
+CONFIG_BUSYBOX=y
+CONFIG_BUSYBOX_CONFIG=router
+CONFIG_WLCONF=y
+CONFIG_BRIDGE=y
+CONFIG_VLAN=y
+# CONFIG_HTTPD is not set
+# CONFIG_GLIBC is not set
+CONFIG_UCLIBC=y
+CONFIG_LIBOPT=y
+# CONFIG_USBAP is not set
+CONFIG_SQUASHFS=y
+# CONFIG_CRAMFS is not set
+
+#
+# Options
+#
+CONFIG_VENDOR=broadcom
+# CONFIG_UDHCPD is not set
+# CONFIG_NAS is not set
+# CONFIG_SES is not set
+# CONFIG_SES_CL is not set
+# CONFIG_TCP_WRAPPER is not set
+# CONFIG_PORTMAP is not set
+# CONFIG_NFS is not set
+# CONFIG_POPT is not set
+# CONFIG_RAID is not set
+# CONFIG_SAMBA is not set
+# CONFIG_USER_GROUP is not set
+# CONFIG_ARCHIVE is not set
+# CONFIG_LLD2D is not set
+# CONFIG_NTP is not set
+CONFIG_UTILS=y
+# CONFIG_ETC is not set
+# CONFIG_REISERFSPROGS is not set
+# CONFIG_BCMWPA2 is not set
+# CONFIG_SECSRL is not set
+# CONFIG_WCN is not set
+# CONFIG_WIPEDISKS is not set
+# CONFIG_GMP is not set
+# CONFIG_SEUTIL is not set
+# CONFIG_USER_NOTE is not set
+# CONFIG_MKDOSFS is not set
+# CONFIG_DOSFSTOOLS is not set
+# CONFIG_RESPART is not set
+# CONFIG_DISKTESTWAIT is not set
+# CONFIG_DISCONNECT_DISK is not set
+CONFIG_EMF=y
+# CONFIG_SHRINK_MEMORY is not set
+
+#
+# Additional C libraries
+#
+CONFIG_LIBCRYPT=y
+CONFIG_LIBDL=y
+CONFIG_LIBM=y
+CONFIG_LIBNSL=y
+CONFIG_LIBPTHREAD=y
+CONFIG_LIBRESOLV=y
+CONFIG_LIBUTIL=y
+CONFIG_LIBDNS=y
+CONFIG_LIBNSS_FILES=y
+
+#
+# Environment
+#
+PLATFORM=mipsel
+LINUXDIR=$(SRCBASE)/linux/linux-2.6
+LIBDIR=$(TOOLCHAIN)/lib
+USRLIBDIR=$(TOOLCHAIN)/usr/lib
+
+#
+# Internal Options
+#
+CONFIG_UTELNETD=y
+# CONFIG_DNSHOOK is not set

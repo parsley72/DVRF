@@ -1,0 +1,83 @@
+tzoupdate - TZO client for (much) any version of UNIX or Linux
+Version 1.11 released July 31 2007
+
+
+INTRODUCTION
+
+This document is longer than it should be, however this seems unavoidable given the
+combinations of supportable OS/platforms, multiplied by the range of
+roles the audience may act in.
+
+This INSTALL file is intended for the following audiences:
+1) Software Developers
+2) Software Package Maintainers and OEM/Systems Integrators
+3) Linux/UNIX system administrators (including capable end users) whose
+ OS/distribution is one that TZO has not released a pre-built package for,
+ for example Ubuntu or Debian or Slackware. (At least some of these platforms
+ will be better supported in the near future..)
+
+tzoupdate may be run on any OS you can compile it for, however TZO Support
+can not provide phone support for installing development tools, or 
+troubleshooting build issues. 
+
+As far as software compilation and installing go, tzoupdate is easy to manage
+(however if this seems too much, you should investigate alternate clients such
+as the TZO updater that may be build into your router).
+
+
+BUILD REQUIREMENTS
+
+Your build system must have GNU development tools installed, meaning
+gmake and gcc.
+
+It is a known issue than non-GNU versions of CC will not work. Patches
+to support other compilers would be considered.
+
+
+NOTES UPGRADING FROM PREVIOUS VERSIONS OF TZO LINUX
+
+Skip this section if you have never installed TZO software on your target PC.
+
+Older TZO clients are not compatible - for example "tzoperl". There is 
+no direct upgrade method - you must manually install remove the older client
+(the easiest way to do this is `slocate tzo` [or `locate tzo`] and
+use sudo or root login to remove the files). At the very least, rm
+the files /usr/local/bin/tzo and /etc/init.d/tzod.
+
+Contact TZO Support if needed.
+
+
+INSTALLATION - REBUILDING RPMS
+
+This option applies to cases where your OS is compatible with 'rpm' installers, 
+but TZO does not have a suitable binary rpm provided for you. An example distribution
+would be Yellow Dog Linux (PPC).
+
+Just follow your OS docs for rebuilding the source rpm (see `rpmbuild -bb`).
+
+Users of .deb based systems such as Ubuntu or Debian can use 'alien' to convert
+(either the source or binary) RPM, and continue from there per OS documentation.
+
+
+INSTALLATION - COMPILING
+
+As a regular user, run 'make tzoupdate'. 
+
+If this succeeds then (su or sudo to root) and run 'make install'.
+
+
+INSTALLATION - REQUIRED CONFIGURATION
+
+1) Edit tzoupdate.conf for your account info
+2) test (see README)
+3) Put the path to tzowrapper.sh in your /etc/rc.local file; this will start the tzowrapper.sh
+as a background daemon.
+
+As an alternative to Step 3 here, you can create an "init" script for your OS/distribution.
+Please send any OS-specific patches to devsupport@tzo.com for merging, thanks. 
+
+
+UNINSTALL
+
+There is no 'make uninstall' unfortunately, but both the Makefile and tzoupdate.spec
+will outline where the install placed files.

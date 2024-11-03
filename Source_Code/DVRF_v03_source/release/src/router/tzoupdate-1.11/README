@@ -1,0 +1,164 @@
+tzoupdate - TZO client for (much) any version of UNIX or Linux
+Version 1.11  released July 31 2007
+Authors: Michael D. Foley (tzoupdate), Scott Prive (scripts, packaging)
+
+
+INTRODUCTION
+
+This is an all-new TZO client, portable to nearly any version of UNIX.
+This TZO client monitors your Internet IP (even if you are behind a
+gateway or border router), and updates TZO's DNS database as-needed.
+
+As this a UNIX command line application, and as there are differences
+between versions of UNIX and versions of Linux, installation is done
+using your OS's software package manager, or in some cases you
+may need to compile the tzoupdate from scratch.
+
+Once the tzoupdate application is installed, the client requires no
+maintanance as long as your TZO account is up-to-date (not expired).
+
+IMPORTANT: Be sure you do not use/configure MORE than ONE TZO client at any network site.
+This means if you use TZO in your router, you do not need this client (choose only one client).
+
+
+TZOUPDATE FEATURES
+
+* Tiny system requirements
+* Suitable for re-packaging for any UNIX, or custom installs. (SEE INSTALL guide)
+* Forced updates every 28 days are built in, to check for account expiration
+* Ability to use /tmp for logging
+* Functionality is divided between a core library (in C), and a wrapper shell script,
+  allowing for easy customization or installs on niche platforms.
+* GPL (v2) license (if you make client customizations/moodifications, be sure
+   the result complies with TZO Developer Guidelines). 
+
+
+INSTALLATION
+
+Documentation in this README is kept short, on the assumption that a prebuilt installation package 
+(rpm [.deb is forthcoming]) for your OS was available, which is true for most of the popular systems.
+
+Currently TZO provides libc6-based rpms for Intel-compatible systems using the RPM package manager.
+For release, testing included Red Hat Enterprise Linux 4, CentOS 4.4, and Fedora Core 6. These systems
+should install tzoupdate using the OS package manager. If this is an option, please skip over the
+remaining paragraphs of 'INSTALLATION' and proceed to POST-INSTALL.
+
+Systems which are NOT compatible with the TZO provided binary rpm should consider 
+one of three alternatives: 
+1) tzoupdate binary .tar.gz, which work on many new Linux which are Intel-compatible and libc6 based.
+2) investigate the "source rpm" (.srpm), and build a binary RPM for your OS.
+3) Use the basic source tarball, using a compiler to build tzoupdate for your OS.
+
+Option 1 requires no special build/compiler tools. Basically you manually copy the TZO files.
+Options 2 and 3 require special build tools, such as 'rpmbuild' or the "GNU make system" (gmake and gcc).
+
+Options 2 and 3 are discussed further in the INSTALL text file.
+
+
+
+REQUIRED POST-INSTALLATION CONFIGURATION ***
+
+After tzoupdate is installed, you have to provide the configuration with your tzo account information:
+
+1) Use a plain-text editor (such as 'nano', 'vi' or 'gedit') to edit /etc/tzoupdate.conf
+You may need to be root (or sudo) to edit this file.
+Enter your TZO information according to the provided example.
+
+2) TEST your tzoupdate.conf
+Invoke tzoupdate using the `tzowrapper.sh -v` command.
+
+Check the output on the console, or in /tmp/tzolog.txt
+You may need to read through some extra diagnostic information before you find the lines
+that indicate your update was successful, or that an update was not needed, or that there was an error.
+
+3) Add this line to /etc/rc.local:
+/usr/local/bin/tzowrapper.sh
+
+This testing step should ONLY be done when first installing, but do a:
+rm /tmp/tzoip.txt
+...then reboot.
+Once the server is back up, check the /tmp/tzolog.txt file for output.
+(Take care not to remove the IP address cache file more than a few times, as this generates account abuse,
+but in this case it is OK).
+
+This concludes tzoupdate configuration. You may close this file and begin testing your domain
+with an outside Internet connection.
+
+
+FURTHER TESTING / TROUBLESHOOTING
+
+NOTE: tzowrapper.sh can only be run only one time within 60 seconds. In most cases the script will
+auto-correct (by instructing itself to wait 60 seconds before continuing). If you see such an error in
+the tzo logs, wait 60 seconds before retrying.
+
+1) To avoid causing testing problems, be sure tzo is not already running:
+ps -ef|grep tzo
+
+If you do not see tzowrapper.sh or tzoupdate, skip on to step #2. If you see these processes, something happened 
+outside the normal install or startup methods. Shut those processes down using the kill command on the process-id. 
+
+2) Invoke tzoupdate using the `tzowrapper.sh -v` command.
+
+If tzowraper successfully runs without error, output is SILENT (however it WILL
+write out a logfile under /tmp/).
+
+The logfile attempts to be informative. If you see something about "not forcing
+an update" that is because your hostname has already been updated to your current
+WAN IP. TZO clients only do full updates when the IP changes, so most of the
+time the client just checks the WAN IP against a local cache.
+
+
+
+READING LOGS
+
+The following files may exist in /tmp :
+tzoip.txt - the tzoupdate cache file, which contains the value of your Internet IP at the moment tzo last updated.
+tzolog.txt - output from the most recent execution of tzowrapper.sh.
+tzo-killfile - You should never see this file unless something went wrong with your account or account info
+(carefully review tzolog.txt if you encounter a tzo-killfile). After correcting the problem, remove this file.
+
+The verbose logs were designed to be parsed, perhaps by custom extensions
+you might script. For example, the following legend explains the log format:
+
+* = informational/verbose
+> = client sending info to TZO
+< = TZO server response
+
+"Single" character prefixes indicate the WAN IP checking phase.
+"Double" (ex: ** >> << ) represent the 'update' phase.
+
+
+SYSTEMS INTEGRATION NOTES
+
+If you are installing tzoupdate for a client customer, do not allow the client customer's
+TZO subscription to lapse or this will cause the client to shutdown (see 'tzo-killfile' notes).
+
+If the account expires, the client shuts down to prevent client abuse from that IP. It is
+safe to remove the TZO client or simply ignore it.
+
+Be sure the client customer knows 'tzoupdate' is already installed on their server.
+If the server is being decomissined or relocated or sent out for service,
+it is advisible to disable tzoupdate so that the domain name does not
+detect the false IP (the IP at the new site). 
+
+You can temporarily disable TZO using this command:
+touch /tmp/tzo-killfile
+This will keep TZO disabled (even through reboots) until the file is removed.
+
+
+
+OEM /DEVELOPER NOTES
+
+Please note that much of the core error-checking functions reside in tzowrapper.sh
+as well as tzoupdate. When porting tzoupdate to any platform the error checking (from
+both sources) must be preserved. 
+
+Please ensure compliance with the TZO Developer specification before redistributing.
+For more details, please see contact TZO Developer Support at devsupport@tzo.com and
+see http://www.tzo.com/developer/
+
+
+PATCHES / USER CONTRIBUTIONS
+Contributions are appreciated, and should be sent to devsupport@tzo.com only.
+Technical Support questions should be directed to support@tzo.com (include system details).
+Feedback and feature requests should go to support@tzo.com

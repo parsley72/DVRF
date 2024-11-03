@@ -1,0 +1,103 @@
+name: CI build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "*" ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 5'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUILD_DIR: Source_Code/DVRF_v03_source/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: install
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get --assume-yes install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 perl autoconf libtool
+
+    - name: Install automake-1.9.6
+      run: |
+        wget https://ftp.gnu.org/gnu/automake/automake-1.9.6.tar.bz2
+        sudo tar -xvjf automake-1.9.6.tar.bz2
+        rm automake-1.9.6.tar.bz2
+        cd automake-1.9.6
+        sudo ./configure
+        sudo make
+        sudo make install
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install compiler
+      shell: bash
+      run: |
+        curl -LO https://github.com/mzpqnxow/hndtools-toolchains/raw/refs/heads/master/hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+        sudo mkdir -p /projects/hnd/tools/linux/
+        sudo tar -xvjf hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2 -C /projects/hnd/tools/linux/
+        rm hndtools-mipsel-linux-uclibc-4.2.3.tar.bz2
+
+    - name: Build
+      shell: bash
+      run: |
+        cd $BUILD_DIR
+
+        # From make.sh
+
+        # To prevent changes from not being copied over to the binary
+        if [ -d ./release/src/router/mipsel-uclibc/ ]; 
+        then
+          cd release/src/router
+          rm -rf ./mipsel-uclibc/
+                cd ../../../
+        fi
+
+        # To prevent symbol file from getting huge
+        if [ -f ./release/src/router/lib/.symbols ]; 
+        then
+          rm ./release/src/router/lib/.symbols
+        fi
+
+        # Remove depends files so user can rename build directory
+        if [ -f ./release/src/router/rp-l2tp/.depend ]; 
+        then
+          rm ./release/src/router/rp-l2tp/.depend
+        fi
+
+        if [ -f ./release/src/router/nvram/.nvram_convert.depend ]; 
+        then
+          rm ./release/src/router/nvram/.nvram_convert.depend
+        fi
+
+        if [ -f ./release/src/router/nvram/.nvram_linux.depend ]; 
+        then
+          rm ./release/src/router/nvram/.nvram_linux.depend
+        fi
+
+        rm -rf Result
+        # From toolchain.sh
+        export PATH=/projects/hnd/tools/linux/hndtools-mipsel-linux-uclibc-4.2.3/bin:$PATH
+        mkdir Result  
+
+        # From compile.sh
+        cd release/src
+        make
+
+        cd ..
+        cd ..
+
+        cp -rf release/image/code.bin Result
+        tee Result/DVRF_makefile_output.txt
